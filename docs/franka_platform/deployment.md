@@ -65,9 +65,9 @@ bash scripts/franka_platform/bootstrap.sh --build-ros
 source install/setup.bash
 ```
 
-新路径必须重新构建，确认产物链接的 libfranka 及硬件插件来自该源码。主机系统准备、ROS 包安装和构建仍是分开的步骤。底层全栈重建与第二台电脑构建本轮没有执行。
+新路径必须重新构建，确认产物链接的 libfranka 及硬件插件来自该源码。主机系统准备、ROS 包安装和构建仍是分开的步骤。本轮已在[独立 Docker 镜像](docker.md)中从固定源码重建原生控制依赖并加载动态库；第二台电脑构建及新控制栈连接硬件尚未执行。
 
-本仓库仅保留 `crisp_controllers`、`crisp_controllers_demos`、`franka_broadcasters`、`libfranka` 四个顶层控制 submodule，以及原样 vendored 的 Franka ROS/描述；不需要原 `crisp_py`、`crisp_gym` 或 Quest/VLA 环境。上游 demos 的完整 launch 仍可能引用旧 adapter，平台只使用本仓库的只读入口。构建入口显式选择原生控制依赖，避免只构建 Python demos 后误以为控制器库也已重建；它尚未在全新 ROS 主机上完成构建验收。
+本仓库仅保留 `crisp_controllers`、`crisp_controllers_demos`、`franka_broadcasters`、`libfranka` 四个顶层控制 submodule，以及原样 vendored 的 Franka ROS/描述；不需要原 `crisp_py`、`crisp_gym` 或 Quest/VLA 环境。上游 demos 的完整 launch 仍可能引用旧 adapter，平台只使用本仓库的只读入口。构建入口显式选择原生控制依赖。已通过的干净构建属于 Humble 容器环境，尚未在另一台物理主机上验收。
 
 ## 4. 配置
 

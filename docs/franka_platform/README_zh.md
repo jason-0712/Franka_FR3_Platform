@@ -50,6 +50,7 @@ bash scripts/franka_platform/start_platform.sh --permission execute
 | [架构](architecture.md) | 服务、缓存、会话、后端、进程和失败边界 |
 | [协议 v1](interface-v1.md) | 三种动作、旋转与工具变换、SDK、错误与状态 |
 | [部署](deployment.md) | 环境固定、安装、只读启动、相机、迁移步骤 |
+| [Docker](docker.md) | 官方 ROS 基镜像、固定源码构建、只读运行及发布 |
 | [故障定位](troubleshooting.md) | 环境、网络、ROS、控制器、相机、协议 |
 | [验收报告](acceptance-report.md) | 本次实际结果、证据、真机执行与换机缺项 |
 

@@ -50,4 +50,6 @@ bash scripts/franka_platform/start_platform.sh
 
 [使用说明](docs/franka_platform/README_zh.md) · [接口 v1](docs/franka_platform/interface-v1.md) · [部署与迁移](docs/franka_platform/deployment.md) · [验收报告](docs/franka_platform/acceptance-report.md) · [第三方来源](THIRD_PARTY_NOTICES.md)
 
+Docker Hub 发布仓库为 [`jiahanyu/franka_fr3`](https://hub.docker.com/r/jiahanyu/franka_fr3)。预览镜像默认只读；构建、拉取、Compose、现场配置挂载和验证方法见 [Docker 部署](docs/franka_platform/docker.md)。
+
 现场配置复制自 `robot.example.yaml` 并保存为 `robot.local.yaml`；现场 IP、校准、照片、原始日志及构建产物不进入版本库。机器人实时环境、工具安装、独立 watchdog 和停止/切换流程仍需按验收报告完成。

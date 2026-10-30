@@ -68,3 +68,9 @@
 | 第二台电脑 | 尚未提供或访问；迁移步骤已交付，未声明通过 |
 
 原始环境报告仍保留在原电脑的 `artifacts/franka_platform/`，没有推送到公开仓库。公开只读摘要见[验收报告](acceptance-report.md)；新电脑运行 `collect_environment.sh` 生成自己的完整环境证据。
+
+## 独立 Docker 镜像新增验证
+
+`jiahanyu/franka_fr3` 从固定 digest 的官方 Humble 基镜像构建，未继承上述实验镜像。全部原生控制依赖已按固定源码重新编译，20 个动态库可加载；Python 平台核心、Mock 服务和真实只读订阅通过。Pinocchio/ros2_control 二进制版本及三处构建兼容处理见 [Docker 文档](docker.md)，实际 apt/Python 与原生库哈希保存在镜像内。
+
+真实只读订阅继续使用原运行控制器与相机作为数据源，没有启动新镜像中的硬件插件；新库连接机器人的兼容性、实时执行与第二台物理电脑仍待现场验收。

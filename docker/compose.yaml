@@ -1,0 +1,35 @@
+services:
+  platform:
+    image: ${FRANKA_PLATFORM_IMAGE:-jiahanyu/franka_fr3:0.1.0-preview}
+    platform: linux/amd64
+    network_mode: host
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - platform-logs:/home/platform/run/artifacts
+    restart: "no"
+  real-reader:
+    extends:
+      service: platform
+    profiles: [real]
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-30}
+      RMW_IMPLEMENTATION: rmw_cyclonedds_cpp
+      FRANKA_PLATFORM_CONFIG: /run/franka/robot.yaml
+    volumes:
+      - type: bind
+        source: ../franka_platform/configs/robot.local.yaml
+        target: /run/franka/robot.yaml
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ../artifacts/franka_platform/robot.urdf
+        target: /run/franka/robot.urdf
+        read_only: true
+        bind:
+          create_host_path: false
+volumes:
+  platform-logs:
