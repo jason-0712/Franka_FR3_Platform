@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "scope": "Historical subscription-only check in the original running workspace, before repository extraction; not a new hardware launch or stage D/E test",
+  "status": "PASS",
+  "samples": 25,
+  "duration_s": 5,
+  "actuator_writes": 0,
+  "own_publishers": [
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ]
+  ],
+  "max_state_age_s": 0.001685543218627572,
+  "max_pair_skew_s": 0.06133675575256348,
+  "max_camera_age_s": 0.062329737265827134,
+  "cameras": [
+    {
+      "name": "primary",
+      "width": 1280,
+      "height": 720,
+      "encoding": "jpeg",
+      "source": "ros_compressed_image"
+    },
+    {
+      "name": "wrist",
+      "width": 640,
+      "height": 480,
+      "encoding": "jpeg",
+      "source": "ros_compressed_image"
+    }
+  ],
+  "pairing": "latest received; ROS header timestamp skew; no hardware synchronization",
+  "fk_crosscheck": {
+    "status": "PASS",
+    "poses_checked": 3,
+    "maximum_position_or_matrix_difference": 6.661338147750939e-16,
+    "actuator_writes": 0,
+    "note": "actual URDF, independent KDL solver; perturbed positions used only in offline mathematics"
+  },
+  "websocket_readonly": {
+    "status": "PASS",
+    "acquire_error": "READ_ONLY",
+    "actuator_writes": 0
+  },
+  "controller_state_query": "FAIL: list_controllers timed out",
+  "hardware_execution": "NOT_RUN",
+  "second_computer_migration": "NOT_RUN",
+  "excluded_from_public_evidence": [
+    "raw images",
+    "joint samples",
+    "installation IP/serials",
+    "calibration",
+    "full environment inventory"
+  ]
+}

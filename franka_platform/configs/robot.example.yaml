@@ -1,0 +1,67 @@
+# Copy to robot.local.yaml (ignored by Git). Null means UNVERIFIED / REQUIRED.
+schema_version: 1
+backend: real
+permission: read_only
+network: {host: 127.0.0.1, port: 8765}
+log_path: artifacts/franka_platform/real_read_only.jsonl
+robot: {model: FR3, ip: null, network_interface: null, system_version: null}
+base_frame_id: base
+tool_frame_id: fr3_hand_tcp
+joint_names: [fr3_joint1, fr3_joint2, fr3_joint3, fr3_joint4, fr3_joint5, fr3_joint6, fr3_joint7]
+controller_to_tool:
+  position_m: null
+  quaternion_xyzw: null
+  source: null
+observation_profile: dual_camera
+cameras:
+  - name: primary
+    serial: null
+    topic: /right/right_third_person_camera/color/image_raw/compressed
+    frame: right_third_person_camera_color_optical_frame
+    color_profile: 1280x720x30
+    calibration_path: null
+  - name: wrist
+    serial: null
+    topic: /right/right_wrist_camera/color/image_raw/compressed
+    frame: right_wrist_camera_color_optical_frame
+    color_profile: 640x480x30
+    calibration_path: null
+timing:
+  # Diagnostic thresholds only, to be reviewed for each installation.
+  observation_max_age_s: 0.5
+  state_max_age_s: 0.5
+  camera_max_age_s: 0.5
+  pair_max_skew_s: 0.1
+  command_timeout_s: 1.0
+  lease_timeout_s: 3.0
+  watchdog_period_s: 0.01
+  position_tolerance_m: 0.0001
+  rotation_tolerance_rad: 0.001
+  joint_tolerance_rad: 0.001
+  gripper_tolerance_m: 0.0001
+limits:
+  joint_lower_rad: null
+  joint_upper_rad: null
+  workspace_lower_m: null
+  workspace_upper_m: null
+  max_translation_step_m: null
+  max_rotation_step_rad: null
+  max_joint_step_rad: null
+  gripper_min_width_m: null
+  gripper_max_width_m: null
+  gripper_speed_m_s: null
+ros:
+  namespace: ''
+  domain_id: 30
+  middleware: rmw_cyclonedds_cpp
+  joint_state_topic: /franka/joint_states
+  gripper_state_topic: /franka_gripper/joint_states
+  finger_joint_names: [fr3_finger_joint1, fr3_finger_joint2]
+  pose_target_topic: /target_pose
+  joint_target_topic: /target_joint
+  gripper_move_action: /franka_gripper/move
+  cartesian_controller: cartesian_impedance_controller
+  joint_controller: joint_impedance_controller
+  controller_manager: /controller_manager
+  robot_description_file: null  # Expanded, audited URDF from this running installation
+camera_image: null  # Must be repository@sha256:...; no latest

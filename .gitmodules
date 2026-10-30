@@ -1,0 +1,15 @@
+[submodule "src/crisp_controllers"]
+	path = src/crisp_controllers
+	url = https://github.com/utiasDSL/crisp_controllers.git
+
+[submodule "src/crisp_controllers_demos"]
+	path = src/crisp_controllers_demos
+	url = https://github.com/utiasDSL/crisp_controllers_demos.git
+
+[submodule "src/franka_broadcasters"]
+	path = src/franka_broadcasters
+	url = https://github.com/danielsanjosepro/franka_broadcasters.git
+
+[submodule "src/libfranka"]
+	path = src/libfranka
+	url = https://github.com/frankarobotics/libfranka.git

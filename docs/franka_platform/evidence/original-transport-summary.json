@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "server_runtime": "host Python 3.13",
+  "client_runtime": "local SDK and Humble container Python 3.10",
+  "scope": "same physical computer, separate processes; not stage E",
+  "checks": [
+    {
+      "check": "local_reader.log",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "check": "container_mock_actions.log",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ]
+}

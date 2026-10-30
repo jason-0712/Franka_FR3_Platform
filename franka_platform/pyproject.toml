@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==79.0.1", "wheel==0.45.1", "packaging==25.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "franka-platform"
+version = "0.1.0"
+description = "Model-independent Franka target and observation interface"
+requires-python = ">=3.10"
+dependencies = ["websockets==15.0.1", "PyYAML==6.0.3"]
+
+[project.scripts]
+franka-platform = "franka_platform.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

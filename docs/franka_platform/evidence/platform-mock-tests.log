@@ -1,0 +1,29 @@
+FRANKA_PLATFORM_MOCK=PASS
+REPORT=<workspace>/docs/franka_platform/evidence/platform-mock-acceptance.json
+
+test_pinned_patch_reconstruction_idempotence_and_wrong_version (test_deployment.Deployment.test_pinned_patch_reconstruction_idempotence_and_wrong_version) ... ok
+test_absolute_pose_ros_mapping (test_platform.Semantics.test_absolute_pose_ros_mapping) ... ok
+test_camera_missing_stale_skew_and_state_faults_are_distinct (test_platform.Semantics.test_camera_missing_stale_skew_and_state_faults_are_distinct) ... ok
+test_feedback_timeout_and_disconnect_abort_no_replay (test_platform.Semantics.test_feedback_timeout_and_disconnect_abort_no_replay) ... ok
+test_independent_gripper_and_no_implicit_change (test_platform.Semantics.test_independent_gripper_and_no_implicit_change) ... ok
+test_invalid_messages_and_quaternion_tolerance (test_platform.Semantics.test_invalid_messages_and_quaternion_tolerance) ... ok
+test_joint_order_dimensions_limits_and_ros_mapping (test_platform.Semantics.test_joint_order_dimensions_limits_and_ros_mapping) ... ok
+test_missing_limits_and_real_execute_fail_closed (test_platform.Semantics.test_missing_limits_and_real_execute_fail_closed) ... ok
+test_mode_switch_aborts_active_and_requires_new_observation (test_platform.Semantics.test_mode_switch_aborts_active_and_requires_new_observation) ... ok
+test_named_measured_joints_reordered_without_assuming_message_order (test_platform.Semantics.test_named_measured_joints_reordered_without_assuming_message_order) ... ok
+test_noncommutative_base_rotation_preserves_position (test_platform.Semantics.test_noncommutative_base_rotation_preserves_position) ... ok
+test_offset_tcp_mapping_and_orientation (test_platform.Semantics.test_offset_tcp_mapping_and_orientation) ... ok
+test_ownership_mode_epoch_expiry_and_switch_failure (test_platform.Semantics.test_ownership_mode_epoch_expiry_and_switch_failure) ... ok
+test_read_only_and_dry_run_all_paths_write_zero (test_platform.Semantics.test_read_only_and_dry_run_all_paths_write_zero) ... ok
+test_reference_sensor_age_continues_after_observation_capture (test_platform.Semantics.test_reference_sensor_age_continues_after_observation_capture) ... ok
+test_request_id_payload_conflict (test_platform.Semantics.test_request_id_payload_conflict) ... ok
+test_specified_reference_latest_state_limits_and_no_accumulation (test_platform.Semantics.test_specified_reference_latest_state_limits_and_no_accumulation) ... ok
+test_urdf_fk_nonzero_origins_and_order_validation (test_platform.Semantics.test_urdf_fk_nonzero_origins_and_order_validation) ... ok
+test_reader_cannot_hijack_writer_and_disconnect_stops (test_platform.Transport.test_reader_cannot_hijack_writer_and_disconnect_stops) ... ok
+test_sdk_three_actions_images_mode_gripper_and_errors (test_platform.Transport.test_sdk_three_actions_images_mode_gripper_and_errors) ... ok
+test_watchdog_does_not_depend_on_network_requests (test_platform.Transport.test_watchdog_does_not_depend_on_network_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.329s
+
+OK

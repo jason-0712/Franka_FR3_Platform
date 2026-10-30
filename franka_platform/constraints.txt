@@ -1,0 +1,5 @@
+websockets==15.0.1
+PyYAML==6.0.3
+setuptools==79.0.1
+wheel==0.45.1
+packaging==25.0
