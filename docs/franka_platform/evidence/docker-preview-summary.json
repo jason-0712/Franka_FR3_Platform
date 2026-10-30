@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "scope": "New independent platform image on the original physical host; existing robot/camera publishers; no hardware controller startup or real actuator commands",
+  "status": "PASS",
+  "source_revision": "49f6a908ad21d6280f0ede02e3de15bceb47e4c0",
+  "image_id": "sha256:3e26c9a39263f2c9e41bd4d888f9c412382fb235dc6bb74e616c78c2ace2e5a5",
+  "native_build": {
+    "status": "PASS",
+    "packages": [
+      "crisp_controllers",
+      "crisp_controllers_robot_demos",
+      "franka_broadcasters",
+      "franka_description",
+      "franka_example_controllers",
+      "franka_gripper",
+      "franka_hardware",
+      "franka_msgs",
+      "franka_robot_state_broadcaster",
+      "franka_semantic_components"
+    ],
+    "libraries_loaded": 20,
+    "build_adjustments": [
+      "libfranka CPack metadata uses the fixed source version instead of git describe",
+      "CRISP uses the public Pinocchio frames.hpp header in place of the internal frames.hxx include",
+      "CRISP links the exported pinocchio::pinocchio target, including parser dependencies"
+    ]
+  },
+  "git_checkout_acceptance": {
+    "status": "PASS",
+    "tests_passed": 21,
+    "skipped": 0
+  },
+  "container_checks": {
+    "isolated_self_test": {
+      "status": "PASS",
+      "network": "none",
+      "tests_passed": 20,
+      "skipped": [
+        "test_pinned_patch_reconstruction_idempotence_and_wrong_version (test_deployment.Deployment)"
+      ],
+      "model_packages_present": {
+        "torch": false,
+        "starVLA": false
+      }
+    },
+    "native_library_loading": {
+      "status": "PASS",
+      "network": "none",
+      "libraries_loaded": 20,
+      "packages": [
+        "crisp_controllers",
+        "crisp_controllers_robot_demos",
+        "franka_broadcasters",
+        "franka_description",
+        "franka_example_controllers",
+        "franka_gripper",
+        "franka_hardware",
+        "franka_msgs",
+        "franka_robot_state_broadcaster",
+        "franka_semantic_components"
+      ]
+    },
+    "mock_read_only": {
+      "status": "PASS",
+      "backend": "mock",
+      "permission": "read_only",
+      "acquire_error": "READ_ONLY",
+      "actuator_writes": 0,
+      "freshness": {
+        "action_blocker": null,
+        "camera_max_age_s": 0.5,
+        "pair_skew_s": 0.0,
+        "pairing_strategy": "latest_by_receive_time; mock timestamps",
+        "state_age_s": 0.0
+      },
+      "cameras": [
+        {
+          "name": "primary",
+          "source": "mock",
+          "encoding": "png",
+          "width": 2,
+          "height": 2,
+          "age_s": 0.0,
+          "received_bytes": 75
+        },
+        {
+          "name": "wrist",
+          "source": "mock",
+          "encoding": "png",
+          "width": 2,
+          "height": 2,
+          "age_s": 0.0,
+          "received_bytes": 75
+        }
+      ]
+    },
+    "mock_execute": {
+      "status": "PASS",
+      "backend": "mock",
+      "permission": "execute",
+      "three_actions_and_gripper": "PASS",
+      "actuator_writes": 4
+    },
+    "mock_dry_run": {
+      "status": "PASS",
+      "backend": "mock",
+      "permission": "dry_run",
+      "three_actions_and_gripper": "PASS",
+      "actuator_writes": 0
+    },
+    "real_read_only": {
+      "status": "PASS",
+      "backend": "real",
+      "permission": "read_only",
+      "acquire_error": "READ_ONLY",
+      "actuator_writes": 0,
+      "freshness": {
+        "action_blocker": null,
+        "camera_max_age_s": 0.5,
+        "pair_skew_s": 0.03355526924133301,
+        "pairing_strategy": "latest received samples; ROS header timestamp skew; no hardware synchronization",
+        "state_age_s": 0.0018463417945895344
+      },
+      "cameras": [
+        {
+          "name": "primary",
+          "source": "ros_compressed_image",
+          "encoding": "jpeg",
+          "width": 1280,
+          "height": 720,
+          "age_s": 0.03541777371719945,
+          "received_bytes": 296014
+        },
+        {
+          "name": "wrist",
+          "source": "ros_compressed_image",
+          "encoding": "jpeg",
+          "width": 640,
+          "height": 480,
+          "age_s": 0.022269918721576687,
+          "received_bytes": 64773
+        }
+      ],
+      "own_publishers": [
+        [
+          "/parameter_events",
+          [
+            "rcl_interfaces/msg/ParameterEvent"
+          ]
+        ]
+      ]
+    }
+  },
+  "default_startup": {
+    "status": "PASS",
+    "image_id": "sha256:3e26c9a39263f2c9e41bd4d888f9c412382fb235dc6bb74e616c78c2ace2e5a5",
+    "default_configuration": "mock + read_only",
+    "health": "healthy",
+    "user": "platform",
+    "root_filesystem_read_only": true
+  },
+  "fk_crosscheck": {
+    "status": "PASS",
+    "pinocchio_version": "4.0.0",
+    "poses_checked": 3,
+    "maximum_position_difference_m": 1.6653345369377348e-16,
+    "maximum_rotation_matrix_difference": 7.771561172376096e-16,
+    "network": "none",
+    "actuator_writes": 0,
+    "note": "Actual local URDF; measured and mathematical positions; no joint samples published"
+  },
+  "remote_registry": {
+    "status": "PASS",
+    "repository": "jiahanyu/franka_fr3",
+    "tags": {
+      "0.1.0-preview": {
+        "digest": "sha256:57cabd95e48108b2208ff99f170d698b8842f47dc16c39c71290c635859584ce",
+        "config_digest": "sha256:3e26c9a39263f2c9e41bd4d888f9c412382fb235dc6bb74e616c78c2ace2e5a5",
+        "compressed_layer_bytes": 546718254
+      },
+      "git-49f6a90": {
+        "digest": "sha256:57cabd95e48108b2208ff99f170d698b8842f47dc16c39c71290c635859584ce",
+        "config_digest": "sha256:3e26c9a39263f2c9e41bd4d888f9c412382fb235dc6bb74e616c78c2ace2e5a5",
+        "compressed_layer_bytes": 546718254
+      }
+    },
+    "source_revision": "49f6a908ad21d6280f0ede02e3de15bceb47e4c0",
+    "platform": "linux/amd64"
+  },
+  "pulled_by_digest_self_test": "PASS",
+  "real_execution_enabled": false,
+  "hardware_execution": "NOT_RUN",
+  "second_computer_migration": "NOT_RUN",
+  "excluded_from_public_evidence": [
+    "raw images",
+    "joint samples",
+    "field configuration",
+    "IP addresses and serials",
+    "calibration",
+    "host environment inventory"
+  ]
+}

@@ -96,6 +96,8 @@ docker push jiahanyu/franka_fr3:0.1.0-preview
 
 同时发布对应的 `git-<短提交>` 标签，部署时记录 Docker Hub 返回的 digest。发布清单见 `docker/image-release.json`；其中列出源码提交、平台、镜像 digest、native 构建和实测范围。首次预览发布不设 `latest`。
 
+已发布 `0.1.0-preview` / `git-49f6a90`，两者对应 `sha256:57cabd95e48108b2208ff99f170d698b8842f47dc16c39c71290c635859584ce`。远端 manifest、镜像配置 digest 与源码 revision 已核对，并按该 digest 拉取运行隔离自测通过；[脱敏验证摘要](evidence/docker-preview-summary.json)记录完整测试范围。发布清单和本段说明在上传后提交，镜像内 OCI revision 仍准确指向构建源码提交 `49f6a908ad21d6280f0ede02e3de15bceb47e4c0`。
+
 镜像内可查看：
 
 ```bash

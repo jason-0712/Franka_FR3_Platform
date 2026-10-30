@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0-preview",
+  "repository": "jiahanyu/franka_fr3",
+  "tags": [
+    "0.1.0-preview",
+    "git-49f6a90"
+  ],
+  "digest": "sha256:57cabd95e48108b2208ff99f170d698b8842f47dc16c39c71290c635859584ce",
+  "platform": "linux/amd64",
+  "source_revision": "49f6a908ad21d6280f0ede02e3de15bceb47e4c0",
+  "source_url": "https://github.com/jason-0712/Franka_FR3_Platform/tree/49f6a908ad21d6280f0ede02e3de15bceb47e4c0",
+  "image_id": "sha256:3e26c9a39263f2c9e41bd4d888f9c412382fb235dc6bb74e616c78c2ace2e5a5",
+  "uncompressed_image_bytes": 1897833255,
+  "compressed_layer_bytes": 546718254,
+  "base_image": "ros@sha256:a3f4de78e42cca693a543ece5798aedcf1cae0171fe71c334a047332cc72ef93",
+  "native_manifest_sha256": "30f4f4bcc3816655dbcb0391f7acf729f6afe3779c5aecb6723af1cea42c428e",
+  "default_permission": "read_only",
+  "default_backend": "mock",
+  "real_execution_enabled": false,
+  "verification": "PASS",
+  "verification_summary": "docs/franka_platform/evidence/docker-preview-summary.json",
+  "hardware_execution": "NOT_RUN",
+  "second_computer_migration": "NOT_RUN",
+  "metadata_note": "This release record is committed after publication; image revision identifies the exact build-source commit."
+}
