@@ -1,8 +1,6 @@
 # Franka FR3 Platform
 
-模型无关的 Franka FR3 基础平台：观测、三类目标接口、独立夹爪、WebSocket 服务与 Python SDK。
-
-**当前版本：离线平台及原控制电脑只读观测已验证。真机执行适配尚未开放，第二台电脑迁移尚未验收。** 默认 `mock + read_only`；`real + execute` 明确拒绝启动。
+这个仓库包含了模型无关的 Franka FR3 基础平台：观测、三类目标接口、独立夹爪、WebSocket 服务与 Python SDK。
 
 ## 安装和验证
 
@@ -33,8 +31,6 @@ bash scripts/franka_platform/start_platform.sh
 | `joint_absolute` | 配置顺序的七关节绝对角度，无 IK |
 | `set_gripper(width_m)` | 独立的夹爪总开口宽度 |
 
-协议校验会话、控制 epoch、观测新鲜度、幂等、模式和限制。Mock 支持执行/反馈/超时测试；真实 ROS 后端仅订阅状态及双相机，并提供 dry-run 消息映射。网络只监听 loopback，远程使用 SSH 转发。
-
 ## 仓库内容
 
 - `franka_platform/`：独立 Python 包、配置模板、客户端示例和测试。
@@ -42,9 +38,7 @@ bash scripts/franka_platform/start_platform.sh
 - `src/`：固定版本的 CRISP / Franka 控制依赖和机器人描述。
 - `patches/nested_repos/`：平台必需的控制描述兼容补丁。
 - `docs/franka_platform/`：中文协议、源码审计、部署及验收报告。
-- `SOURCE_BASELINE.json`：原始源码基线、依赖提交、vendored 文件和补丁 SHA256。
-
-本仓库从原 `franka_ws` 中独立整理，没有包含 StarVLA、FLASH、模型训练/推理代码或权重。原工作区继续保留实验与遥操内容。上层策略通过 SDK 接入本平台。
+- `SOURCE_BASELINE.json`：原始源码基线、依赖提交、vendored 文件和补丁 SHA256。。
 
 ## 文档
 
