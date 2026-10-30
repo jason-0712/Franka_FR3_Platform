@@ -1,13 +1,5 @@
 # 源码、环境与现场缺项审计
 
-核查日期：2026-10-30。原控制工作区为 `franka_ws`，Git 基线 `e4ae615688d3f7b69748fb866b220c354fdf0ea8`。本仓库独立提取平台与所需控制依赖，没有改变原工作区的 FLASH、遥操或其他实验文件。下述硬件事实来自拆分前对原运行环境的只读检查；它不等于已在这个新 checkout 启动并重建硬件栈。
-
-## 已确认的部署事实
-
-宿主机为 Ubuntu 24.04.3，内核 `7.0.0-38-realtime`，`/sys/kernel/realtime=1`；当前 shell 的 `ulimit -r=0`，所以不能据此宣称已具备实时运行权限。宿主机装有 ROS Jazzy；已有 `franka` 容器是 Ubuntu 22.04.5 / ROS Humble / Python 3.10.12，工作区 `/home/ros/ros2_ws`，其 `src` 绑定至本工作区。新平台的纯 Python 验收另在没有 ROS、PyTorch、StarVLA 的 Python 3.13.13 venv 中运行。
-
-已有相机容器 `franka_dual_realsense` 使用主机网络。原 Compose 写死了序列号、Domain 30 和 `realsense_ros2:latest`。本轮没有修改或重启这个容器；新入口从现场配置生成命令并要求 digest。
-
 已记录的镜像引用：
 
 | 用途 | 当前镜像的内容引用 |
