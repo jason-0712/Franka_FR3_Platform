@@ -1,8 +1,8 @@
 # Franka 基础平台 v0.1
 
-本平台复用工作区已有的 CRISP / Franka 控制栈，提供与学习模型无关的三种目标接口、独立夹爪宽度接口、WebSocket 服务和异步 Python SDK。协议与 Mock 已实现；真实 ROS 后端提供订阅及 dry-run 消息映射，**尚未提供可启用的真机写入适配器**。真实执行需要先解决独立看门狗、停止/切换和故障恢复审计缺口，不能仅修改配置中的布尔值绕过。
+本平台复用工作区已有的 CRISP / Franka 控制栈，提供与学习模型无关的三种目标接口、独立夹爪宽度接口、WebSocket 服务和异步 Python SDK。协议与 Mock 已实现；真实 ROS 后端提供订阅及 dry-run 消息映射。
 
-第一版支持末端绝对位姿、相对于指定观测的基座系末端增量、绝对七关节位置。没有模型训练、推理、IK、回零或动作块调度依赖。StarVLA、FLASH 和原遥操实验继续保留在原 `franka_ws`，不包含在本仓库。
+第一版支持末端绝对位姿、相对于指定观测的基座系末端增量。
 
 ## 从这里开始
 
@@ -54,6 +54,5 @@ bash scripts/franka_platform/start_platform.sh --permission execute
 | [故障定位](troubleshooting.md) | 环境、网络、ROS、控制器、相机、协议 |
 | [验收报告](acceptance-report.md) | 本次实际结果、证据、真机执行与换机缺项 |
 
-现场配置从 `franka_platform/configs/robot.example.yaml` 复制成 `robot.local.yaml`，后者被 Git 忽略。`null` 表示未核实；Mock 的工作空间、步长等数值不能直接移植到真机。
 
-本平台从原 [franka_ws](https://github.com/jason-0712/franka_ws) 独立整理；源码来源和范围见根目录 `SOURCE_BASELINE.json` 与 `THIRD_PARTY_NOTICES.md`。本目录是源码交付与阶段性证据，不表示已完成第二台电脑迁移。
+
